@@ -1,14 +1,11 @@
 const EventEmitter = require('events').EventEmitter
+const { deepCopy } = require('./Utils')
 
 class Handler extends EventEmitter {
 
   constructor(webhook) {
     super()
     this.webhook = webhook
-  }
-
-  _deepCopy(object) {
-    return JSON.parse(JSON.stringify(object))
   }
 
   _hasError(res, msg) {
@@ -21,7 +18,7 @@ class Handler extends EventEmitter {
   _findHandler(requestPath, webhooks) {
     let arrRequestPath = requestPath.split('?')
     let requestedWebhooks = webhooks.filter((webhook) => {
-      return this._deepCopy(arrRequestPath).shift() === webhook.path
+      return deepCopy(arrRequestPath).shift() === webhook.path
     })
     return requestedWebhooks[0]
   }

@@ -37,7 +37,12 @@ const humanFormatDate = (dateString) => {
   return strDate
 }
 
+const deepCopy = (object) => {
+  return JSON.parse(JSON.stringify(object))
+}
+
 module.exports = {
   forEach: forEach,
-  humanFormatDate: humanFormatDate
+  humanFormatDate: humanFormatDate,
+  deepCopy: deepCopy
 }
