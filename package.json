@@ -1,0 +1,17 @@
+{
+  "name": "gitlab-slack-integration",
+  "version": "1.0.0",
+  "description": "A normal slack bot to notify user regarding the push in gitlab",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "pagal<bibash1270@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.0",
+    "request": "^2.88.0"
+  }
+}
